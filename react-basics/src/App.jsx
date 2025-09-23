@@ -1,12 +1,17 @@
-function App() {
-  const [count, setCount] = useState(0)
+import Profilecard from "./components/Profilecard";
+import girlImage from './assets/girl.jpg';
 
+
+
+function App() {
   return (
-   <div>
-    <h1>Hii Baby</h1>
-   </div>
-    
-  )
+    <div>
+      <Profilecard 
+      name = "Aarya Sharma"
+      image={girlImage}
+      bio = "Aarya is a creative and curious girl who loves coding, sketching, and exploring new places. "/>
+    </div>
+  );
 }
 
-export default App
+export default App;
