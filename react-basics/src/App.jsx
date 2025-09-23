@@ -1,8 +1,6 @@
 import Profilecard from "./components/Profilecard";
 import girlImage from './assets/girl.jpg';
 
-
-
 function App() {
   return (
     <div>
