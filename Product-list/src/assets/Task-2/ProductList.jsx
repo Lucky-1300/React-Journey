@@ -1,21 +1,18 @@
-import React from 'react'
-import './ProductList.css'
+import React from "react";
+import "./ProductList.css";
 
-
-const ProductList = () => {
-
-  const image = [
-    "Product-list/vite-project/public/laptop.webp",
-    "Product-list/vite-project/public/phone.webp",
-    "Product-list/vite-project/public/tablet.avif"
-  
-  ];
+const ProductList = ({ items }) => {
   return (
-    <div>
-    <h1>Lucky Ray</h1>
-    <img src="Product-list/vite-project/public/tablet.avif" alt="" />
+    <div className="product-list">
+      {items.map((product) => (
+        <div key={product.id} className="product-card">
+          <img src={product.image} alt={product.name} width={200} />
+          <h2>{product.name}</h2>
+          <p>{product.price}</p>
+        </div>
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default ProductList
+export default ProductList;
