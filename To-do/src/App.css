@@ -1,42 +1,89 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+ body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding-top: 50px;
+    }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
+    .todo-container {
+      background-color: #fff;
+      width: 400px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+    h2 {
+      text-align: center;
+      color: #333;
+    }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
+    /* Input area */
+    .input-group {
+      display: flex;
+      margin-bottom: 20px;
+    }
 
-.card {
-  padding: 2em;
-}
+    .input-group input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px 0 0 6px;
+      outline: none;
+      font-size: 16px;
+    }
 
-.read-the-docs {
-  color: #888;
-}
+    .input-group button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #4caf50;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 0 6px 6px 0;
+      transition: background 0.3s;
+    }
+
+    .input-group button:hover {
+      background-color: #45a049;
+    }
+
+    /* Todo list */
+    ul.todo-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul.todo-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f9f9f9;
+      margin-bottom: 10px;
+      padding: 10px 15px;
+      border-radius: 6px;
+      border: 1px solid #eee;
+      transition: 0.2s all;
+    }
+
+    ul.todo-list li:hover {
+      background-color: #f1f1f1;
+    }
+
+    .delete-btn {
+      background-color: #f44336;
+      border: none;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.3s;
+    }
+
+    .delete-btn:hover {
+      background-color: #e53935;
+    }
