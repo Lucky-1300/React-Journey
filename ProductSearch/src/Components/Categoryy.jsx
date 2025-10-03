@@ -43,13 +43,22 @@ const Categoryy = () => {
                 const { id, title, price, img, description } = item
                 return (
                   <div className="col-12 col-sm-6 col-md-4" key={id}>
-                    <div className="card h-100 shadow-sm">
-                      <img src={img} className="card-img-top" alt={title} style={{ height: '200px', objectFit: 'cover' }} />
-                      <div className="card-body">
+                    <div className="card h-100 d-flex flex-column shadow-sm">
+                      {/* Image container grows to fill space */}
+                      <div style={{ flex: '1 0 auto', overflow: 'hidden' }}>
+                        <img
+                          src={img}
+                          alt={title}
+                          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                        />
+                      </div>
+
+                      {/* Card body */}
+                      <div className="card-body d-flex flex-column">
                         <h5 className="card-title">{title}</h5>
+                        <p className="card-text flex-grow-1">{description}</p>
                         <p>Price: {price}/-</p>
-                        <p className="card-text">{description}</p>
-                        <button className="btn btn-dark w-100">Buy now</button>
+                        <button className="btn btn-dark w-100 mt-auto">Buy now</button>
                       </div>
                     </div>
                   </div>
