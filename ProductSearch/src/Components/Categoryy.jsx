@@ -4,19 +4,18 @@ import Categories from './Categories'
 const Categoryy = () => {
   const [data, setdata] = useState(Categories)
 
-  // Filter by category (men, women, children)
+  
   const filterCategory = (cat) => {
     const result = Categories.filter((item) => item.category === cat)
     setdata(result)
   }
 
-  // Filter by color (black, white)
+ 
   const filterColor = (color) => {
     const result = Categories.filter((item) => item.color === color)
     setdata(result)
   }
 
-  // Show all items
   const showAll = () => {
     setdata(Categories)
   }
