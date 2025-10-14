@@ -40,3 +40,13 @@
 .read-the-docs {
   color: #888;
 }
+.gold {
+  display: inline-flex;
+  align-items: center;
+}
+
+.gold span {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
