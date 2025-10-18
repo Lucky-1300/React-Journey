@@ -1,42 +1,102 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timer-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timer-box {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   text-align: center;
+  width: 300px;
+  transition: transform 0.3s ease;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.timer-box:hover {
+  transform: translateY(-5px);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.timer-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.timer-display {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #34495e;
+  margin: 1rem 0 2rem;
+  letter-spacing: 2px;
+}
+
+.button-area {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.btn {
+  flex: 1;
+  padding: 10px 0;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: white;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn.start {
+  background: #27ae60;
+}
+
+.btn.stop {
+  background: #e74c3c;
+}
+
+.btn.reset {
+  background: #f39c12;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+@media (max-width: 480px) {
+  .timer-box {
+    width: 90%;
+    padding: 1.8rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .timer-display {
+    font-size: 2.5rem;
   }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  .btn {
+    font-size: 0.9rem;
+    padding: 8px 0;
   }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
