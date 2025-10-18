@@ -1,42 +1,74 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #a8edea, #fed6e3);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px;
+}
+
+h2 {
   text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 2px #ffffff80;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 25px;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 1000px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+li {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px 10px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
-.card {
-  padding: 2em;
+
+li img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid #a1c4fd;
+  margin-bottom: 10px;
+  transition: 0.3s ease;
 }
 
-.read-the-docs {
-  color: #888;
+li:hover img {
+  border-color: #c2e9fb;
+  transform: scale(1.05);
+}
+
+
+a {
+  color: #4a4a4a;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+  display: inline-block;
+  margin-top: 5px;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #007bff;
 }
