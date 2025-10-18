@@ -1,13 +1,12 @@
 import './App.css'
-import TodoApp from './TodoApp';
+import TodoApp from './TodoApp'
 
 function App() {
-
-
   return (
-    
-    <TodoApp/>
+    <div>
+      <TodoApp />
+    </div>
   )
 }
 
-export default App;
+export default App

@@ -1,58 +1,62 @@
-import React, { useState } from 'react';
+import React, { useReducer, useState } from "react";
+import "./App.css";
 
-export const TodoApp = () => {
-  const [task, setTask] = useState(''); // stores input value
-  const [tasks, setTasks] = useState([]); // stores list of tasks
+const initialState = [];
 
-  // Handle input change
-  const handleChange = (e) => {
-    setTask(e.target.value);
-  };
+function todoReducer(state, action) {
+  switch (action.type) {
+    case "add":
+      return [...state, { id: Date.now(), text: action.text, completed: false }];
+    case "toggle":
+      return state.map(todo =>
+        todo.id === action.id ? { ...todo, completed: !todo.completed } : todo
+      );
+    case "delete":
+      return state.filter(todo => todo.id !== action.id);
+    default:
+      return state;
+  }
+}
 
-  // Add a new task
-  const addTask = () => {
-    if (task.trim() !== '') {
-      setTasks([...tasks, task]);
-      setTask(''); // clear input
-    }
-  };
+function TodoApp() {
+  const [todos, dispatch] = useReducer(todoReducer, initialState);
+  const [text, setText] = useState("");
 
-  // Delete a task by index
-  const deleteTask = (index) => {
-    const newTasks = tasks.filter((_, i) => i !== index);
-    setTasks(newTasks);
-  };
-
-  // Handle Enter key press
-  const handleKeyPress = (e) => {
-    if (e.key === 'Enter') {
-      addTask();
+  const handleAdd = () => {
+    if (text.trim()) {
+      dispatch({ type: "add", text });
+      setText("");
     }
   };
 
   return (
     <div className="todo-container">
-      <h2>My To-Do List</h2>
-      <div className="input-group">
+      <h1>To-Do App</h1>
+      <div className="todo-input">
         <input
-          type="text"
-          placeholder="Add a new task..."
-          value={task}
-          onChange={handleChange}
-          onKeyPress={handleKeyPress}
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          placeholder="New task"
         />
-        <button onClick={addTask}>Add</button>
+        <button className="btn" onClick={handleAdd}>Add</button>
       </div>
-      <ul className="todo-list">
-        {tasks.map((t, index) => (
-          <li key={index}>
-            {t} <button className="delete-btn" onClick={() => deleteTask(index)}>Delete</button>
+      <ul>
+        {todos.map(todo => (
+          <li key={todo.id}>
+            <span
+              className={todo.completed ? "completed" : ""}
+              onClick={() => dispatch({ type: "toggle", id: todo.id })}
+            >
+              {todo.text}
+            </span>
+            <button className="delete-btn" onClick={() => dispatch({ type: "delete", id: todo.id })}>
+              Delete
+            </button>
           </li>
         ))}
       </ul>
     </div>
   );
-};
+}
 
 export default TodoApp;
-
