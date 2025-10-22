@@ -1,15 +1,14 @@
-import SignUpForm from './SignUpForm'
 import './App.css'
+import ContactForm from './ContactForm'
 
 function App() {
   
 
   return (
     <>
-     <SignUpForm />
+        <ContactForm />
     </>
   )
-
 }
 
 export default App
