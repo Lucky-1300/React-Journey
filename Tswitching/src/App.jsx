@@ -1,24 +1,15 @@
-import { useState } from 'react'
-import './App.css'
-import './index.css'
+import "./index.css";
+import { useTheme } from "./context/ThemeContext";
 
 function App() {
-  const [theme, setTheme] = useState("light")
-
-  const toggleTheme = () => {
-    setTheme((curr) => (curr === "light" ? "dark" : "light"))
-  }
+  const { theme, toggleTheme } = useTheme();
 
   return (
-    <>
-      <div className={`container ${theme}`}>
-        <h1>Theme switcher</h1>
-        <button onClick={toggleTheme}>
-          Toggle Theme
-        </button>
-      </div>
-    </>
-  )
+    <div className={`container ${theme}`}>
+      <h1>Theme Switcher (Context API)</h1>
+      <button onClick={toggleTheme}>Toggle Theme</button>
+    </div>
+  );
 }
 
-export default App
+export default App;

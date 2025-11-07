@@ -1,21 +1,25 @@
 .container {
   text-align: center;
-  padding: 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  transition: all 0.25s ease-in-out;
 }
 
-.container.light {
-  background-color: #ffffff;
-  color: #000000;
+.light {
+  background: #ffffff;
+  color: #111;
 }
 
-
-.container.dark {
-  background-color: #000000;
+.dark {
+  background: #111;
   color: #ffffff;
 }
 
 button {
-  padding: 10px 20px;
-  margin-top: 20px;
+  padding: 8px 20px;
   cursor: pointer;
+  font-size: 16px;
 }
