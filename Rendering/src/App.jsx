@@ -1,35 +1,49 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState, useMemo } from "react";
+import "./App.css";
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const [search, setSearch] = useState("");
+
+  // Sample data
+  const users = [
+    "Lucky Kumari",
+    "Aarav Sharma",
+    "Priya Mehta",
+    "Rohan Verma",
+    "Ishita Patel",
+    "Rahul Singh",
+    "Sneha Kapoor",
+    "Arjun Yadav",
+    "Kiran Das",
+    "Neha Bansal"
+  ];
+
+  // 🔥 Optimize filtering with useMemo
+  const filteredUsers = useMemo(() => {
+    console.log("Filtering users...");
+    return users.filter((user) =>
+      user.toLowerCase().includes(search.toLowerCase())
+    );
+  }, [users, search]); // Only runs when users or search changes
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="app">
+      <h1>⚡ useMemo Optimization Demo</h1>
+      <input
+        type="text"
+        className="search"
+        placeholder="Search user..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+      />
 
-export default App
+      <ul>
+        {filteredUsers.map((user, index) => (
+          <li key={index}>{user}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default App;
