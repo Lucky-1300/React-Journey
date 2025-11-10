@@ -28,7 +28,7 @@ const MovieDetails = () => {
           <p>🎬 Director: {movie.Director}</p>
           <p className="plot">{movie.Plot}</p>
 
-          {/* ✅ BACK BUTTON */}
+          
           <button className="back-btn" onClick={() => navigate(-1)}>
             ⬅ Back
           </button>

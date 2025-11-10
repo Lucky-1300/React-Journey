@@ -1,4 +1,4 @@
-/* 🌟 General Layout */
+
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(135deg, #1d2b64, #f8cdda);
@@ -13,7 +13,7 @@ body {
   color: white;
 }
 
-/* 🔍 Search Bar */
+
 form {
   margin-bottom: 20px;
   display: flex;
@@ -45,7 +45,6 @@ button:hover {
   background: #005fcc;
 }
 
-/* 🎬 Movies Grid */
 .movie-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
@@ -54,7 +53,7 @@ button:hover {
   padding: 0 20px;
 }
 
-/* 🎞️ Movie Card */
+
 .movie-card {
   background: rgba(255, 255, 255, 0.16);
   padding: 12px;
@@ -86,7 +85,7 @@ p {
   margin: 4px 0;
 }
 
-/* Details page button */
+
 .details-btn {
   margin-top: 10px;
   background: #ffb300;
@@ -131,7 +130,7 @@ p {
   cursor: not-allowed;
 }
 
-/* 🎥 Movie Details Page */
+
 .details-container {
   text-align: center;
   padding: 30px;
@@ -163,7 +162,7 @@ p {
   background: #d83030;
 }
 
-/* 📱 Responsive */
+
 @media (max-width: 600px) {
   input {
     width: 180px;
