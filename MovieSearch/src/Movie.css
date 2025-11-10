@@ -100,14 +100,14 @@ p {
   background: #d89c00;
 }
 
-/* ❗ Error Message */
+
 .error {
   color: yellow;
   font-size: 18px;
   margin-top: 15px;
 }
 
-/* 🔄 Pagination */
+
 .pagination {
   display: flex;
   justify-content: center;
